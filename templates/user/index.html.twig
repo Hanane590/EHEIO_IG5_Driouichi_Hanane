@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add user{% endblock %}
+
+{% block body %}
+
+<style>
+    body {
+        background-color: #8fd3f4;
+        font-family: Arial, sans-serif;
+    }
+
+    .page {
+        display: flex;
+        padding: 20px;
+    }
+
+    .menu {
+        width: 150px;
+        margin-right: 30px;
+    }
+
+    .menu ul {
+        list-style: disc;
+        padding-left: 20px;
+    }
+
+    .menu li {
+        margin-bottom: 8px;
+    }
+
+    .menu a {
+        color: blue;
+        text-decoration: underline;
+    }
+
+    .form-container {
+        margin-top: 10px;
+    }
+
+    .form-row {
+        margin-bottom: 8px;
+    }
+
+    label {
+        display: inline-block;
+        width: 120px;
+        font-weight: normal;
+    }
+</style>
+{{ include('partials/_navbar.html.twig')}}
+<div class="page">
+
+    <div class="form-container">
+        {{ form_start(form) }}
+
+        <div class="form-row">
+            {{ form_label(form.name, 'Name') }}
+            {{ form_widget(form.name) }}
+        </div>
+
+        <div class="form-row">
+            {{ form_label(form.occupation, 'Occupation') }}
+            {{ form_widget(form.occupation) }}
+        </div>
+
+        <div class="form-row">
+            {{ form_label(form.date, 'Date') }}
+            {{ form_widget(form.date) }}
+        </div>
+
+        <div class="form-row">
+            {{ form_widget(form.save) }}
+        </div>
+
+        {{ form_end(form) }}
+    </div>
+
+</div>
+
+{% endblock %}
